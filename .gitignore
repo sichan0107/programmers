@@ -1,5 +1,5 @@
 .metadata
-level1/.project
-level1/.settings/
+/level1/.project
+/level1/.settings/
 bin/**
-level1/.classpath
+/level1/.classpath
