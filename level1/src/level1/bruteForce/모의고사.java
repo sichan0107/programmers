@@ -3,13 +3,14 @@ package level1.bruteForce;
 import java.util.ArrayList;
 
 
-public class Solution {
+public class 모의고사 {
     public static int[] solution(int[] answers) {
         int[] result = new int[3];
         int[] first = {1,2,3,4,5};
         int[] second = {2,1,2,3,2,4,2,5};
         int[] third = {3,3,1,1,2,2,4,4,5,5};
         int[][] pattern = {first, second, third};
+        
         for(int i=0; i<pattern.length; i++) {
         	int tmp = check(pattern[i], answers);
         	result[i] = tmp;
@@ -24,7 +25,7 @@ public class Solution {
         if(list.size() == 1) {
         	answer[0] = list.get(0);
         }else if(list.size() > 1){
-        	for(int i=0; i<3; i++) {
+        	for(int i=0; i<answer.length; i++) {
         		answer[i] = list.get(i);
         	}        	
         }
@@ -46,8 +47,7 @@ public class Solution {
     	return count;
     }
 	public static void main(String[] args) {
-		int[] answers = {5,4,3,2,1};
-        
+		int[] answers = {1,1,1,1,1,1,1,1,1,1,1,1};        
 		int[] test = solution(answers);
 		for(int i : test) {
 			System.out.println(i);
