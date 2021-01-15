@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 //전화번호 목록
 
-public class Solution {
+public class 전화번호목록 {
 	// 3차시도 -> 이건 다른 사람의 풀이를 봤다... 효율성에서 도저히 패스가 안되서...
 	// 생각의 전환이 필요했다. 접두어가 될 짧은 String만 생각했는데 그게 아니라 아예 긴 String에서
 	// substring으로 잘라가며 연산하는 방법을 썼더라...
