@@ -1,49 +1,39 @@
 package level1;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Calendar;
+import java.util.List;
+import java.util.stream.Stream;
 
-/*
- * 프린터 문제 : 우선순위 큐를 사용하는 듯?
- */
 public class Solution {
-    public static int solution(int[] priorities, int location) {
-        int answer = 0;
-        int locValue = 0;
-        int[] sortedClone = priorities.clone();
-        Arrays.sort(sortedClone); // 3 2 2 1
-        
-        //PriorityQueue<Integer> q = new PriorityQueue<Integer>(Collections.reverseOrder());
-        Queue<Integer> q = new LinkedList<Integer>();
-        for(int i : priorities) {
-        	q.add(i);
-        }
-        
-        while(!q.isEmpty()) {
-        	int i = 0;
-        	// 가장 앞에 있는 문서를 꺼낸다.
-        	int tmp = q.poll(); // 2 1 3 2
-        	if(tmp == sortedClone[i] && location == 0) {
-        		answer = 1;
-        		break;
-        	}
-        	//tmp = 2, sorted = 3, location = 2(3)
-        	else if(tmp < sortedClone[i]) {
-        		q.add(tmp);
-        	}else if(tmp == sortedClone[i]){
-        		i++;
-        		answer++;
-        	}
-        }
-       
-        return answer;
-    }
+	
+	/*
+	 * Arrays.stream 학습
+	 * 1. 과정
+	 * 	- 스트림 인스턴스 생성 -> 가공 (매핑, 필터링) -> 결과 만들기
+	 * 	
+	 */
 	public static void main(String[] args) {
-		int[] priorities = {2,1,3,2};
-		//int[] priorities = {1,1,9,1,1,1};
-		int location = 2;
-		System.out.println(solution(priorities, location));
+		// 배열 스트림 생성
+		List<String> names = Arrays.asList("Eric", "Elena", "Java");
+		
+		// names.stream() 후 filter에 인자값으로 평가식을 넣음. 각 요소에 대해서 a를 포함하는 스트림만 리턴됨.
+		Stream<String> stream = names.stream()
+											.filter(name -> name.contains("a"))
+											.map(String::toUpperCase);
+		
+        // month에는 오늘이 몇 월인지 들어 있습니다.
+        int month = Calendar.getInstance().get(Calendar.MONTH) + 1;
+        String season = "";
+        // switch문을 이용해서 season이 오늘은 어떤 계절인지 나타내게 만들어보세요.
+        switch(month){
+            case :
+                
+        }
+        
+        System.out.println("지금은 " + month + "월이고, " + season + "입니다.");
+		
+		
 	}
 
 }
