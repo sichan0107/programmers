@@ -1,8 +1,8 @@
-package level1;
+package kakao;
 
 import java.util.ArrayList;
 
-public class Solution {
+public class 크레인인형뽑기게임 {
     public static int solution(int[][] board, int[] moves) {
         int answer = 0;
         ArrayList<Integer> basket = new ArrayList<Integer>();
